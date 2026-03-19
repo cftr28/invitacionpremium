@@ -186,7 +186,15 @@
             display: flex; align-items: center; justify-content: center;
             padding: 20px;
         }
-        .hero h1 { font-family: 'Great Vibes'; font-size: clamp(50px, 12vw, 90px); margin: 10px 0; color: var(--dorado-oscuro); }
+        /* --- HERO --- */
+.hero h1 { 
+    font-family: 'Great Vibes'; 
+    /* Reducimos el tamaño máximo de 90px a 70px y el mínimo de 50px a 35px */
+    font-size: clamp(35px, 10vw, 70px); 
+    margin: 5px 0; 
+    color: var(--dorado-oscuro); 
+    line-height: 1.2; /* Añadimos esto para que si el nombre salta de línea, no se amontone */
+}
         .hero .subtitle { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #666; font-weight: 600; max-width: 600px; margin: 0 auto 20px; line-height: 2; }
         .hero .main-event { 
             font-family: 'Playfair Display'; font-size: 16px; letter-spacing: 3px; 
@@ -533,7 +541,7 @@
         function crearPetalo() {
             const p = document.createElement("div");
             p.classList.add("petalo");
-            const opciones = ["✨", "🤍"];
+            const opciones = ["🤍"];
             p.innerText = opciones[Math.floor(Math.random() * opciones.length)];
             p.style.left = Math.random() * 100 + "vw";
             const duracion = Math.random() * 3 + 4;
